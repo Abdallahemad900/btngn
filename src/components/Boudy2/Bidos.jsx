@@ -5,41 +5,39 @@ import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
 import * as THREE from "three";
 
-export function Body(props) {
+export function Bodys(props) {
 
   const {animation} = props;
-  const { headFollow, cursorFollow } = useControls({
-    headFollow: false,
-    cursorFollow: false,
-  });
+  // const { headFollow, cursorFollow } = useControls({
+  //   headFollow: false,
+  //   cursorFollow: false,
+  // });
   const group = useRef();
   const { nodes, materials } = useGLTF("/bod.glb");
  
  const {animations: walkAnm} =useFBX("anim/Gaming.fbx")
  const {animations: typing} =useFBX("anim/Typing.fbx")
  const {animations: fall} =useFBX("anim/Falling Idle.fbx")
- const {animations: walk} =useFBX("anim/walk.fbx")
 
  walkAnm[0].name = "gaming";
  typing[0].name = "Typing";
  fall[0].name = "Falling";
- walk[0].name = "walk";
 
  const { actions } = useAnimations(
-  [walkAnm[0], typing[0], fall[0], walk[0]],
+  [walkAnm[0], typing[0], fall[0]],
   group
 );  
 
 
-useFrame((state) => {
-  if (headFollow) {
-    group.current.getObjectByName("CC_Base_NeckTwist01").lookAt(state.camera.position);
-  }
-  if (cursorFollow) {
-    const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
-    group.current.getObjectByName("CC_Base_Spine01").lookAt(target);
-  }
-});
+// useFrame((state) => {
+//   if (headFollow) {
+//     group.current.getObjectByName("CC_Base_NeckTwist01").lookAt(state.camera.position);
+//   }
+//   if (cursorFollow) {
+//     const target = new THREE.Vector3(state.mouse.x, state.mouse.y, 1);
+//     group.current.getObjectByName("CC_Base_Spine01").lookAt(target);
+//   }
+// });
 
 useEffect(() => {
   actions[animation].reset().fadeIn(0.5).play();

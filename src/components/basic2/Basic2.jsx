@@ -153,7 +153,7 @@ export default function Basic2() {
         material={new THREE.MeshStandardMaterial()}
       />
       <Floor />
-      <OrbitControls target-y={1} autoRotate />
+      <OrbitControls target-y={1}  />
       <axesHelper args={[5]} />
       <gridHelper />
       <Stats />

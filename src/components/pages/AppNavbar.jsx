@@ -42,7 +42,9 @@ function AppNav (){
               <Link to="/basic2" className="nav-link">Basics2</Link>
               <Link to="/basic3" className="nav-link">Basics3</Link>
               <Link to="/men" className="nav-link">Man</Link>
+              <Link to="/bodys" className="nav-link">Boudy2</Link>
               <Link to="/body" className="nav-link">Boudy</Link>
+              <Link to="/upload" className="nav-link">Upload</Link>
             </Nav>
           </Navbar.Collapse>
         

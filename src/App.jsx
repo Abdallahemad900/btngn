@@ -21,7 +21,11 @@ import Basics from './components/basicss/Basic'
 import Basic2 from './components/basic2/Basic2'
 import Basicso from './components/gltfs/Gltfs'
 import Mans from './components/man/Man'
+import Appos from './components/Boudy2/Apos.jsx'
 import Exp from './components/Boudy/Exper'
+import Upload from './components/tryToUpload/Upload.jsx'
+
+
 function App() {
 
   return (
@@ -38,6 +42,8 @@ function App() {
           <Route path="/men" element={<Mans/>} />
           <Route path="/shoe" element={<Shoesconf/>} />
           <Route path="/body" element={<Exp/>} />
+          <Route path="/bodys" element={<Appos/>} />
+          <Route path="/upload" element={<Upload/>} />
 
      
       </Routes>
